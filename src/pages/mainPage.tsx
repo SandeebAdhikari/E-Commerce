@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import DetailPage from "./DetailPage";
+import ProductCard from "../components/productCard";
 
 const MainPage = () => {
   const [showDetailPage, setShowDetailPage] = useState(false);
@@ -10,6 +11,7 @@ const MainPage = () => {
 
   return (
     <div>
+      <ProductCard />
       {!showDetailPage ? (
         <button className="btn shadow-lg rounded-xl p-2" onClick={handleClick}>
           Open Detail Page
