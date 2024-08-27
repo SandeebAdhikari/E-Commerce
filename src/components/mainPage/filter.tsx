@@ -2,8 +2,13 @@ import { useState } from "react";
 import Jeans from "../bottom/jeans";
 import Pants from "../bottom/pants";
 import Shorts from "../bottom/shorts";
-import SweatPants from "../bottom/sweatPants";
 import Active from "../bottom/active";
+import SweatPants from "../bottom/sweatPants";
+import Shirts from "../Tops/shirts";
+import TShirts from "../Tops/t-shirt";
+import GraphicTShirt from "../Tops/graphicTees";
+import Hoodies from "../Tops/hoodies";
+import Sweaters from "../Tops/sweater";
 
 import { FaChevronDown, FaChevronUp, FaChevronRight } from "react-icons/fa";
 
@@ -11,6 +16,12 @@ const Filter = () => {
   const [isOpenApparel, setIsOpen] = useState(false);
   const [isOpenBottom, setIsOpenApparel] = useState(false);
   const [isOpenNewArrival, setIsOpenNewArrivals] = useState(false);
+
+  const [isOpenTop, setIsOpenTops] = useState(false);
+
+  const toggleTopMenu = () => {
+    setIsOpenTops(!isOpenTop);
+  };
 
   const toggleApparelMenu = () => {
     setIsOpen(!isOpenApparel);
@@ -103,6 +114,47 @@ const Filter = () => {
                   <a href="#">
                     <Active />
                   </a>
+                </li>
+              </ul>
+            )}
+
+            <div
+              onClick={toggleTopMenu}
+              className="flex gap-2 items-center cursor-pointer mt-2"
+            >
+              <span>{isOpenTop ? <FaChevronDown /> : <FaChevronRight />}</span>
+              <span className="font-semibold">Tops</span>
+            </div>
+            {isOpenTop && (
+              <ul className="ml-8 mt-2 space-y-2">
+                <li>
+                  <Shirts />
+                </li>
+                <li>
+                  <a href="#">
+                    <TShirts />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <GraphicTShirt />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <Hoodies />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <Sweaters />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Polos</a>
+                </li>
+                <li>
+                  <a href="#">Active</a>
                 </li>
               </ul>
             )}
