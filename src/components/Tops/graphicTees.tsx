@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaChevronDown, FaChevronUp, FaChevronRight } from "react-icons/fa";
 
-const Jeans = () => {
+const GraphicTees = () => {
   const [isOpenGTees, setIsOpenGTees] = useState(false);
 
   const toggleGTeesMenu = () => {
@@ -39,16 +39,10 @@ const Jeans = () => {
           <li>
             <a href="#">A & F Logo Graphics</a>
           </li>
-          <li>
-            <a href="#">Slim Jeans</a>
-          </li>
-          <li>
-            <a href="#">Skinny Jeans</a>
-          </li>
         </ul>
       )}
     </div>
   );
 };
 
-export default Jeans;
+export default GraphicTees;

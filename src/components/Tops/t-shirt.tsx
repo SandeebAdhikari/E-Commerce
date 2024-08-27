@@ -1,22 +1,22 @@
 import { useState } from "react";
 import { FaChevronDown, FaChevronUp, FaChevronRight } from "react-icons/fa";
 
-const Jeans = () => {
-  const [isOpenJeans, setIsOpenJeans] = useState(false);
+const TShirt = () => {
+  const [isOpenTShirt, setIsOpenTShirt] = useState(false);
 
-  const toggleJeansMenu = () => {
-    setIsOpenJeans(!isOpenJeans);
+  const toggleTShirtMenu = () => {
+    setIsOpenTShirt(!isOpenTShirt);
   };
   return (
     <div>
       <div
-        onClick={toggleJeansMenu}
+        onClick={toggleTShirtMenu}
         className="flex justify-between gap-2 items-center cursor-pointer mt-2"
       >
-        <span className="font-semibold">Jeans</span>
-        <span>{isOpenJeans ? <FaChevronDown /> : <FaChevronUp />}</span>
+        <span className="font-semibold">TShirt</span>
+        <span>{isOpenTShirt ? <FaChevronDown /> : <FaChevronUp />}</span>
       </div>
-      {isOpenJeans && (
+      {isOpenTShirt && (
         <ul className="ml-8 mt-2 space-y-2">
           <li>
             <a href="#">ViewAll</a>
@@ -39,4 +39,4 @@ const Jeans = () => {
   );
 };
 
-export default Jeans;
+export default TShirt;
