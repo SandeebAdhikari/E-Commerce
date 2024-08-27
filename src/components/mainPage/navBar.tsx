@@ -1,7 +1,7 @@
 import { MdFavoriteBorder } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 
-const navBar = () => {
+const NavBar = () => {
   return (
     <div className="flex h-24">
       <div className="flex items-center">
@@ -142,4 +142,4 @@ const navBar = () => {
   );
 };
 
-export default navBar;
+export default NavBar;
