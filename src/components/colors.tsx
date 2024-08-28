@@ -1,6 +1,6 @@
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { useState } from "react";
-import { colors } from "./utils/color";
+import { colors } from "./utils/colors";
 
 const Colors = () => {
   const [isOpenColor, setIsOpenColor] = useState(false);
