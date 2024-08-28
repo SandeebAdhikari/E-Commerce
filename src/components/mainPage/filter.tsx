@@ -15,6 +15,8 @@ import Categories from "../categories";
 import Colors from "../colors";
 import Size from "../size";
 import Length from "../length";
+import Style from "../style";
+import Materials from "../material";
 
 const Filter = () => {
   const [isOpenBottom, setIsOpenApparel] = useState(false);
@@ -350,6 +352,8 @@ const Filter = () => {
       <Colors />
       <Size />
       <Length />
+      <Style />
+      <Materials />
     </div>
   );
 };
