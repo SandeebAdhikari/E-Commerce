@@ -14,6 +14,7 @@ import { FaChevronDown, FaChevronUp, FaChevronRight } from "react-icons/fa";
 import Categories from "../categories";
 import Colors from "../colors";
 import Size from "../size";
+import Length from "../length";
 
 const Filter = () => {
   const [isOpenBottom, setIsOpenApparel] = useState(false);
@@ -44,14 +45,14 @@ const Filter = () => {
   };
 
   const toggleMatchingSetsMenu = () => {
-    setIsOpenMatchingSets(!isOpenSwimwear);
+    setIsOpenMatchingSets(!isOpenMatchingSets);
   };
 
   const toggleAccessoriesMenu = () => {
-    setIsOpenAccessories(!isOpenSwimwear);
+    setIsOpenAccessories(!isOpenAccessories);
   };
   const toggleCoatJacketMenu = () => {
-    setIsOpenCoatJackets(!isOpenSwimwear);
+    setIsOpenCoatJackets(!isOpenCoatJacket);
   };
 
   const toggleSuitsMenu = () => {
@@ -348,6 +349,7 @@ const Filter = () => {
       <Categories />
       <Colors />
       <Size />
+      <Length />
     </div>
   );
 };
