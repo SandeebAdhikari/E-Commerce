@@ -14,12 +14,35 @@ const MainPage = () => {
   return (
     <div className="mx-[250px]">
       <NavBar />
-      <div className="flex items-center w-full h-32 ">
-        <h1 className="text-2xl font-semibold ">Gender</h1>
+      <div className="flex items-center w-full h-32">
+        <h1 className="text-2xl font-semibold">Gender</h1>
       </div>
-      <div className="flex gap-8">
-        <Filter />
-        <ProductCard />
+      <div className="flex gap-8 ">
+        <div className="sticky top-0 h-screen overflow-y-auto">
+          <Filter />
+        </div>
+        <div className="flex-1 overflow-y-auto h-screen">
+          <div className="grid grid-cols-3 gap-8">
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+          </div>
+        </div>
       </div>
     </div>
   );

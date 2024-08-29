@@ -29,6 +29,11 @@ const Filter = () => {
   const [isOpenAccessories, setIsOpenAccessories] = useState(false);
   const [isOpenMatchingSets, setIsOpenMatchingSets] = useState(false);
   const [isOpenCologne, setIsOpenColognes] = useState(false);
+  const [isToggleSwitch, setIsToggleSwitch] = useState(true);
+
+  const toggleFilterVisibility = () => {
+    setIsToggleSwitch(!isToggleSwitch);
+  };
 
   const toggleTopMenu = () => {
     setIsOpenTops(!isOpenTop);
@@ -71,11 +76,26 @@ const Filter = () => {
 
   return (
     <div className="w-52 min-h-screen">
+      <div className="h-24 flex items-center justify-between p-2">
+        <span className="mr-3 text-gray-600 font-semibold">Shop My Store</span>
+        <div
+          className={`w-12 h-6 flex items-center bg-gray-300 rounded-full p-1 cursor-pointer ${
+            isToggleSwitch ? "bg-blue-500" : "bg-gray-300"
+          }`}
+          onClick={toggleFilterVisibility}
+        >
+          <div
+            className={`bg-white w-4 h-4 rounded-full shadow-md transform ${
+              isToggleSwitch ? "translate-x-6" : "translate-x-0"
+            }`}
+          ></div>
+        </div>
+      </div>
       <hr />
       <div>
         <div
           onClick={toggleNewArrivalMenu}
-          className="flex gap-2 items-center cursor-pointer mt-2"
+          className="flex gap-2 items-center cursor-pointer mt-8"
         >
           <span>
             {isOpenNewArrival ? <FaChevronDown /> : <FaChevronRight />}

@@ -1,43 +1,42 @@
 export const selectColors = [
-  "#F1C40F", // Yellow
-  "#1ABC9C", // Teal
-  "#3498DB", // Light Blue
-  "#2ECC71", // Green
-  "#27AE60", // Dark Green
-  "#2980B9", // Dark Blue
-  "#E74C3C", // Red
-  "#8E44AD", // Purple
-  "#D35400", // Orange
-  "#7F8C8D", // Grey
-  "#F39C12", // Dark Yellow
-  "#C0392B", // Dark Red
-  "#9B59B6", // Light Purple
-  "#16A085", // Dark Teal
-  "#34495E", // Dark Grey Blue
-  "#2C3E50", // Very Dark Blue
-  "#BDC3C7", // Light Grey
-  "#ECF0F1", // Very Light Grey
-  "#E67E22", // Carrot Orange
-  "#E74C3C", // Light Red
-  "#1B4F72", // Navy Blue
-  "#5D6D7E", // Blue Grey
-  "#117A65", // Deep Green
-  "#7D6608", // Olive Brown
-  "#6C3483", // Deep Purple
-  "#F4D03F", // Bright Yellow
-  "#52BE80", // Pastel Green
-  "#AF7AC5", // Lavender
-  "#85C1E9", // Sky Blue
-  "#F5B041", // Bright Orange
-  "#EB984E", // Peach
-  "#AAB7B8", // Cool Grey
-  "#F1948A", // Light Coral
-  "#7FB3D5", // Light Sky Blue
-  "#D7DBDD", // Very Light Grey
-  "#FDEDEC", // Blush Pink
-  "#76D7C4", // Aquamarine
-  "#48C9B0", // Mint Green
-  "#1ABC9C", // Turquoise
-  "#A9DFBF", // Pastel Mint
-  "#F5CBA7", // Peach Pink
+  "#4B4B4B", // Charcoal
+  "#3C3C3C", // Dark Grey
+  "#B3B3B3", // Light Grey
+  "#F5F5F5", // Off White
+  "#2C2C2C", // Jet Black
+  "#A67B5B", // Camel
+  "#8B5E3C", // Brown
+  "#595E63", // Slate Grey
+  "#B7B7B7", // Ash Grey
+  "#D0C7C2", // Taupe
+  "#6F4E37", // Coffee Brown
+  "#5A5A5A", // Graphite
+  "#5F9EA0", // Cadet Blue
+  "#A2A2A2", // Neutral Grey
+  "#E0E0E0", // Light Stone
+  "#4A708B", // Steel Blue
+  "#778899", // Light Slate Grey
+  "#556B2F", // Olive Green
+  "#9E9E9E", // Cool Grey
+  "#7D7D7D", // Warm Grey
+  "#8B8B83", // Khaki
+  "#708090", // Slate Grey
+  "#D3D3D3", // Light Grey
+  "#464646", // Almost Black
+  "#A52A2A", // Brick Red
+  "#8B4513", // Saddle Brown
+  "#C0C0C0", // Silver
+  "#D2B48C", // Tan
+  "#8FBC8F", // Dark Sea Green
+  "#2F4F4F", // Dark Slate Grey
+  "#6B8E23", // Olive Drab
+  "#4682B4", // Steel Blue
+  "#696969", // Dim Grey
+  "#556B2F", // Dark Olive Green
+  "#CD853F", // Peru
+  "#C71585", // Medium Violet Red
+  "#B22222", // Firebrick
+  "#A9A9A9", // Dark Grey
+  "#DAA520", // Goldenrod
+  "#8A2BE2", // Blue Violet
 ];
