@@ -12,11 +12,11 @@ const MainPage = () => {
 
   return (
     <div className="mx-[250px]">
-      <NavBar />
-      <div className="flex items-center w-full h-32">
-        <h1 className="text-2xl font-semibold">Gender</h1>
+      <div className="p-4">
+        <NavBar />
       </div>
-      <div className="flex gap-8 ">
+
+      <div className="flex gap-8 mt-24">
         <div className="sticky top-0 h-screen overflow-y-auto">
           <Filter onCategorySelect={handleCategorySelect} />
         </div>

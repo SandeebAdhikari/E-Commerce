@@ -1,5 +1,11 @@
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { removeItemFromCart } from "../features/cartSlice"; // Add the action for removing items
+import {
+  removeItemFromCart,
+  increaseQuantity,
+  decreaseQuantity,
+} from "../features/cartSlice";
+import { AiOutlineClose } from "react-icons/ai"; // Import the close icon
 
 const CartModal = ({ isOpen, onClose }) => {
   const dispatch = useDispatch();
@@ -9,13 +15,20 @@ const CartModal = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className="bg-white rounded-lg p-6 w-1/3">
+      <div className="relative bg-white rounded-lg p-6 w-1/3">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
+        >
+          <AiOutlineClose size={16} />
+        </button>
+
         <h2 className="text-2xl font-bold mb-4">Your Cart</h2>
 
         {items.length === 0 ? (
           <p>Your cart is empty.</p>
         ) : (
-          <>
+          <div className="flex flex-col w-full">
             <ul>
               {items.map((item, index) => (
                 <li
@@ -33,6 +46,21 @@ const CartModal = ({ isOpen, onClose }) => {
                       <p>
                         ${item.totalPrice.toFixed(2)} (x{item.quantity})
                       </p>
+                      <div className="flex items-center">
+                        <button
+                          onClick={() => dispatch(decreaseQuantity(item.id))}
+                          className="w-7 h-7 text-gray-600  rounded-full hover:bg-gray-300"
+                        >
+                          -
+                        </button>
+                        <span className="mx-2">{item.quantity}</span>
+                        <button
+                          onClick={() => dispatch(increaseQuantity(item.id))}
+                          className="w-7 h-7 text-gray-600  rounded-full hover:bg-gray-300"
+                        >
+                          +
+                        </button>
+                      </div>
                     </div>
                   </div>
                   <button
@@ -51,13 +79,12 @@ const CartModal = ({ isOpen, onClose }) => {
               </p>
             </div>
 
-            <div className="flex justify-end mt-6">
-              <button onClick={onClose} className="btn mr-4">
-                Close
+            <div className="flex justify mt-6">
+              <button className="btn bg-black w-full">
+                Proceed to Checkout
               </button>
-              <button className="btn btn-primary">Proceed to Checkout</button>
             </div>
-          </>
+          </div>
         )}
       </div>
     </div>
