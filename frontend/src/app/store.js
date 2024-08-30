@@ -9,10 +9,12 @@ import { reviewListApi } from "../api/reviewList";
 import { storeListApi } from "../api/storeList";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import cartReducer from "../features/cartSlice";
+import wishlistReducer from "../features/wishListSlice";
 
 export const store = configureStore({
   reducer: {
     cart: cartReducer,
+    wishlist: wishlistReducer,
     [autoCompleteApi.reducerPath]: autoCompleteApi.reducer,
     [categoryApi.reducerPath]: categoryApi.reducer,
     [productApi.reducerPath]: productApi.reducer,

@@ -26,17 +26,17 @@ const ProductCard = ({ product }) => {
 
   const handleClick = () => {
     const url = `/product/${product.webID}`;
-    console.log("Navigating to:", url); // Log the URL
-    navigate(url); // Navigate using the correct URL
+    console.log("Navigating to:", url);
+    navigate(url);
   };
 
   return (
     <div className="flex flex-col w-[348px] mx-2">
       <div className="relative h-[400px] bg-white rounded-xl shadow-lg shadow-slate-400">
         <img
-          src={productImages[selectedColorIndex].url} // Use selected product image
+          src={productImages[selectedColorIndex].url}
           alt={product.productTitle}
-          className="w-full h-full object-contain rounded-xl" // Use object-contain to prevent zooming in
+          className="w-full h-full object-contain rounded-xl"
           onClick={handleClick}
         />
         <div className="absolute top-2 right-2 bg-white p-1 rounded-full">

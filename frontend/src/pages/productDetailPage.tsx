@@ -8,6 +8,7 @@ import { TbTruckReturn } from "react-icons/tb";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { addItemToCart } from "../features/cartSlice";
+import { addItemToWishlist } from "../features/wishlistSlice";
 
 const ProductDetailPage = () => {
   const { id } = useParams();
@@ -34,6 +35,7 @@ const ProductDetailPage = () => {
   const toggleDescription = () => {
     setIsShowDescription(!isShowDescription);
   };
+
   const toggleSalesDate = () => {
     setIsShowSalesDate(!isShowSalesDate);
   };
@@ -56,11 +58,25 @@ const ProductDetailPage = () => {
     );
   };
 
+  const handleAddToWishlist = () => {
+    dispatch(
+      addItemToWishlist({
+        id: product.webID,
+        title: product.productTitle,
+        price:
+          product.prices?.[0]?.salePrice?.minPrice ||
+          product.prices?.[0]?.regularPrice?.minPrice ||
+          0,
+        image: product.image?.url,
+      })
+    );
+  };
+
   return (
     <div className="mx-[250px] min-h-screen py-8">
       <NavBar />
       <div className="flex flex-col lg:flex-row mt-12 gap-8">
-        <div className="relative w-472 h-[600px] bg-white rounded-xl shadow-lg shadow-slate-400 mb-4">
+        <div className="w-472 h-[600px] bg-white rounded-xl shadow-lg shadow-slate-400 mb-4">
           <img
             src={product.image?.url || "/default-image.png"}
             alt={product.productTitle || "Product Image"}
@@ -123,7 +139,10 @@ const ProductDetailPage = () => {
             >
               Add to Cart
             </button>
-            <button className="bg-gray-200 text-gray-900 px-6 py-3 rounded-md hover:rounded-xl hover:bg-gray-300 h-12">
+            <button
+              className="bg-gray-200 text-gray-900 px-6 py-3 rounded-md hover:rounded-xl hover:bg-gray-300 h-12"
+              onClick={handleAddToWishlist}
+            >
               <MdFavoriteBorder size={24} />
             </button>
           </div>
@@ -170,11 +189,11 @@ const ProductDetailPage = () => {
                   {isShowSalesDate && (
                     <div className="flex flex-col">
                       <p>
-                        Sale Starts:
+                        Sale Starts:{" "}
                         {product.prices?.[0]?.displayBegDateTime || "N/A"}
                       </p>
                       <p>
-                        Sale Ends:
+                        Sale Ends:{" "}
                         {product.prices?.[0]?.displayEndDateTime || "N/A"}
                       </p>
                     </div>
@@ -198,11 +217,11 @@ const ProductDetailPage = () => {
                   <div>
                     <p>
                       Available for Shipping:{" "}
-                      {product.isAvailableforShip ? "Yes" : "No" || ""}
+                      {product.isAvailableforShip ? "Yes" : "No"}
                     </p>
                     <p>
                       Available for Pickup:{" "}
-                      {product.isAvailableforPickUp ? "Yes" : "No" || ""}
+                      {product.isAvailableforPickUp ? "Yes" : "No"}
                     </p>
                   </div>
                 )}

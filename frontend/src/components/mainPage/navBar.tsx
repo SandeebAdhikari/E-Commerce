@@ -3,10 +3,14 @@ import { LiaShoppingBagSolid } from "react-icons/lia";
 import { CiSearch } from "react-icons/ci";
 import { useSelector } from "react-redux";
 import CartModal from "../cartModal";
+import WishlistModal from "../wishListModal"; // Import your WishlistModal
 import { useState } from "react";
+
 const NavBar = () => {
   const { totalQuantity, totalPrice } = useSelector((state) => state.cart);
+  const wishlistItems = useSelector((state) => state.wishlist.items); // Access wishlist items
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isWishlistOpen, setIsWishlistOpen] = useState(false); // State for wishlist modal
 
   const handleCartClick = () => {
     setIsCartOpen(true);
@@ -14,6 +18,14 @@ const NavBar = () => {
 
   const handleCloseCart = () => {
     setIsCartOpen(false);
+  };
+
+  const handleWishlistClick = () => {
+    setIsWishlistOpen(true);
+  };
+
+  const handleCloseWishlist = () => {
+    setIsWishlistOpen(false);
   };
 
   return (
@@ -24,12 +36,12 @@ const NavBar = () => {
           <li>
             <details>
               <summary>SHOP</summary>
-              <ul className="rounded-t-none p-2">
+              <ul className="rounded-t-none p-2 bg-slate-200">
                 <li>
-                  <a>Link 1</a>
+                  <a>Men's</a>
                 </li>
                 <li>
-                  <a>Link 2</a>
+                  <a>Women's</a>
                 </li>
               </ul>
             </details>
@@ -37,7 +49,7 @@ const NavBar = () => {
           <li>
             <details>
               <summary>FABRIC</summary>
-              <ul className="rounded-t-none p-2">
+              <ul className="rounded-t-none p-2 bg-slate-200">
                 <li>
                   <a>Men's</a>
                 </li>
@@ -50,7 +62,7 @@ const NavBar = () => {
           <li>
             <details>
               <summary>JOURNAL</summary>
-              <ul className="rounded-t-none p-2">
+              <ul className="rounded-t-none p-2 bg-slate-200">
                 <li>
                   <a>Link 1</a>
                 </li>
@@ -63,7 +75,7 @@ const NavBar = () => {
           <li>
             <details>
               <summary>ABOUT</summary>
-              <ul className="rounded-t-none p-2">
+              <ul className="rounded-t-none p-2 bg-slate-200">
                 <li>
                   <a>Link 1</a>
                 </li>
@@ -113,11 +125,22 @@ const NavBar = () => {
         </div>
 
         <button className="btn btn-ghost btn-circle">
-          <CiSearch size={30} />
+          <CiSearch size={40} />
         </button>
-        <div className="flex items-center">
-          <MdFavoriteBorder size={40} />
-        </div>
+
+        <button
+          className="btn btn-ghost btn-circle"
+          onClick={handleWishlistClick}
+        >
+          <div className="indicator">
+            <MdFavoriteBorder size={40} />
+            <span className="badge badge-sm indicator-item">
+              {wishlistItems.length}
+            </span>
+          </div>
+        </button>
+
+        {/* Cart Button */}
         <div className="dropdown dropdown-end">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
             <div className="indicator">
@@ -148,6 +171,7 @@ const NavBar = () => {
           </div>
         </div>
         <CartModal isOpen={isCartOpen} onClose={handleCloseCart} />
+        <WishlistModal isOpen={isWishlistOpen} onClose={handleCloseWishlist} />
       </div>
     </div>
   );
