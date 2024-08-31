@@ -155,9 +155,9 @@ const NavBar = () => {
           </div>
         </button>
 
-        <div className="dropdown dropdown-end">
-          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
-            <div className="indicator">
+        <div className="dropdown dropdown-end ">
+          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle ">
+            <div className="indicator ">
               <LiaShoppingBagSolid size={40} />
               <span className="badge badge-sm indicator-item">
                 {totalQuantity}
@@ -168,16 +168,13 @@ const NavBar = () => {
             tabIndex={0}
             className="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow"
           >
-            <div className="card-body">
+            <div className="card-body bg-slate-200 rounded-b-lg">
               <span className="text-lg font-bold">{totalQuantity} Items</span>
-              <span className="text-info">
+              <span className="text-black">
                 Subtotal: ${totalPrice.toFixed(2)}
               </span>
-              <div className="card-actions">
-                <button
-                  className="btn btn-primary btn-block"
-                  onClick={handleCartClick}
-                >
+              <div className="bg-black text-white p-2 rounded-xl hover:rounded-2xl">
+                <button className=" btn-block" onClick={handleCartClick}>
                   View cart
                 </button>
               </div>
