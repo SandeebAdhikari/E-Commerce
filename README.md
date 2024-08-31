@@ -2,7 +2,7 @@
 
 ### **Sign Up**
 
-[Sign Up](/frontend/public/images/signUp.png)
+![Sign Up](/frontend/public/images/signUp.png)
 
 ### **Login**
 
