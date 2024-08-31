@@ -1,5 +1,33 @@
 # **E-Commerce App**
 
+### **Sign Up**
+
+[Sign Up](/frontend/public/images/signUp.png)
+
+### **Login**
+
+![Login Page](/frontend/public/images/login.png)
+
+### **Main Page**
+
+![Main Page](/frontend/public/images/mainPage.png)
+
+### **Product Detail**
+
+![Product Detail Page](/frontend/public/images/productDetail.png)
+
+### **Cart**
+
+![Cart](/frontend/public/images/cart.png)
+
+### **Wishlist**
+
+![Cart](/frontend/public/images/wishList.png)
+
+## **Video Demo**
+
+![Video Running](/frontend/public/video/Redux_Proejct.mp4)
+
 ## **Description**
 
 This is a shopping application built using **Vite** and **React**. The app fetches product data from **RapidAPI** and allows users to browse products, view detailed product information, and manage their shopping cart and wishlist. The application also includes a user authentication system with signup and login functionalities.
@@ -20,8 +48,8 @@ This is a shopping application built using **Vite** and **React**. The app fetch
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/your-username/your-repository.git
-   cd your-repository
+   git clone https://github.com/SandeebAdhikari/E-Commerce.git
+   cd frontend
    ```
 
 2. **Install dependencies**:
@@ -60,28 +88,6 @@ Create a `.env` file in the root of the project and add your RapidAPI credential
 VITE_RAPIDAPI_KEY=your_rapidapi_key
 VITE_RAPIDAPI_HOST=your_rapidapi_host
 ```
-
-## **Screenshots**
-
-### **Main Page**
-
-![Main Page](./screenshots/main-page.png)
-
-### **Product List**
-
-![Product List](./screenshots/product-list.png)
-
-### **Product Details**
-
-![Product Details](./screenshots/product-details.png)
-
-### **Wishlist**
-
-![Wishlist](./screenshots/wishlist.png)
-
-## **Video Demo**
-
-![Video Demo](./demo/demo-video.mp4)
 
 ## **Contributing**
 
