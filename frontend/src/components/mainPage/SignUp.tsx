@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -9,10 +11,12 @@ const SignUp = () => {
   const handleSignUp = (e) => {
     e.preventDefault();
 
-    // Save the user details to localStorage
-    localStorage.setItem("user", JSON.stringify({ email, password }));
+    localStorage.setItem(
+      "user",
+      JSON.stringify({ firstName, lastName, email, password })
+    );
     alert("Account created successfully!");
-    navigate("/"); // Redirect to login page after signup
+    navigate("/");
   };
 
   return (
@@ -22,18 +26,34 @@ const SignUp = () => {
           <h2 className="text-3xl font-bold text-center">Sign Up</h2>
           <input
             type="text"
+            placeholder="First Name"
+            className="bg-slate-200 hover:bg-slate-300 w-full h-12 rounded-xl p-2"
+            onChange={(e) => setFirstName(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Last Name"
+            className="bg-slate-200 hover:bg-slate-300 w-full h-12 rounded-xl p-2"
+            onChange={(e) => setLastName(e.target.value)}
+          />
+          <input
+            type="text"
             placeholder="Email"
-            className="bg-slate-200 hover:bg-slate-300 rounded-xl w-10/12 p-4"
+            className="bg-slate-200 hover:bg-slate-300 w-full h-12 rounded-xl p-2"
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
             type="password"
-            placeholder="Password"
-            className="bg-slate-200 hover:bg-slate-300 rounded-xl w-10/12 p-4"
+            placeholder="Create Password"
+            className="bg-slate-200 hover:bg-slate-300 w-full h-12 rounded-xl p-2"
             onChange={(e) => setPassword(e.target.value)}
           />
+
           <div className="card-actions justify-center mt-6">
-            <button className="btn btn-primary" onClick={handleSignUp}>
+            <button
+              className="bg-slate-200 hover:bg-slate-300 w-32 h-12 rounded-xl"
+              onClick={handleSignUp}
+            >
               Sign Up
             </button>
           </div>

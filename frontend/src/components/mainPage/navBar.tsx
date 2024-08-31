@@ -4,14 +4,24 @@ import { CiSearch } from "react-icons/ci";
 import { useSelector } from "react-redux";
 import CartModal from "../cartModal";
 import WishlistModal from "../wishListModal"; // Import your WishlistModal
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Logo from "/images/sa-favicon-black.svg";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
   const { totalQuantity, totalPrice } = useSelector((state) => state.cart);
-  const wishlistItems = useSelector((state) => state.wishlist.items); // Access wishlist items
+  const wishlistItems = useSelector((state) => state.wishlist.items);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [isWishlistOpen, setIsWishlistOpen] = useState(false); // State for wishlist modal
+  const [isWishlistOpen, setIsWishlistOpen] = useState(false);
+  const [firstName, setFirstName] = useState("");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (user && user.firstName) {
+      setFirstName(user.firstName);
+    }
+  }, []);
 
   const handleCartClick = () => {
     setIsCartOpen(true);
@@ -27,6 +37,10 @@ const NavBar = () => {
 
   const handleCloseWishlist = () => {
     setIsWishlistOpen(false);
+  };
+
+  const handleLogout = () => {
+    navigate("/");
   };
 
   return (
@@ -118,11 +132,11 @@ const NavBar = () => {
                 <a>Settings</a>
               </li>
               <li>
-                <a>Logout</a>
+                <a onClick={handleLogout}>Logout</a>
               </li>
             </ul>
           </div>
-          <h1 className="text-xl">WELCOME, NAME</h1>
+          <h1 className="text-xl">{firstName}</h1>
         </div>
 
         <button className="btn btn-ghost btn-circle">
