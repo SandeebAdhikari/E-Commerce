@@ -14,12 +14,16 @@ const NavBar = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isWishlistOpen, setIsWishlistOpen] = useState(false);
   const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
     if (user && user.firstName) {
       setFirstName(user.firstName);
+    }
+    if (user && user.lastName) {
+      setLastName(user.lastName);
     }
   }, []);
 
@@ -102,7 +106,7 @@ const NavBar = () => {
           </li>
         </ul>
       </div>
-      <div className="flex items-center gap-5 ml-72">
+      <div className="flex items-center gap-5 ml-64">
         <div className="flex items-center gap-2">
           <div className="dropdown dropdown-end">
             <div
@@ -136,7 +140,9 @@ const NavBar = () => {
               </li>
             </ul>
           </div>
-          <h1 className="text-xl">{firstName}</h1>
+          <h1 className="text-xl">
+            {firstName.toUpperCase()} {lastName.toUpperCase()}
+          </h1>
         </div>
 
         <button className="btn btn-ghost btn-circle">
