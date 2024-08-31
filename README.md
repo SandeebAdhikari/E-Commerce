@@ -26,7 +26,7 @@
 
 ## **Video Demo**
 
-![Video Running](/frontend/public/video/Redux_Proejct.mp4)
+[![Video Running](/frontend/public/images/login.png)](/frontend/public/video/Redux_Proejct.mp4)
 
 ## **Description**
 
@@ -97,5 +97,3 @@ VITE_RAPIDAPI_HOST=your_rapidapi_host
 4. Commit your changes (`git commit -m 'Add some feature'`).
 5. Push to the branch (`git push origin feature-branch`).
 6. Open a Pull Request.
-
-## This markdown will be ready to copy and paste into your `README.md` file for GitHub. Make sure to replace the placeholders like `your-username`, `your-repository`, and paths to images or videos with the actual paths where your assets are located.
