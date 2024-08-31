@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { MdFavoriteBorder } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addItemToWishlist } from "../../features/wishListSlice";
 
 const ProductCard = ({ product }) => {
   const [selectedColorIndex, setSelectedColorIndex] = useState(0);
   const [showAll, setShowAll] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const productImages = Array.isArray(product.image)
     ? product.image
@@ -24,6 +27,20 @@ const ProductCard = ({ product }) => {
     setShowAll(false);
   };
 
+  const handleWishlistClick = () => {
+    dispatch(
+      addItemToWishlist({
+        id: product.webID,
+        title: product.productTitle,
+        price:
+          product.prices?.[0]?.regularPrice?.maxPrice ||
+          product.prices?.[0]?.regularPrice?.minPrice ||
+          0,
+        image: productImages[selectedColorIndex]?.url || "",
+      })
+    );
+  };
+
   const handleClick = () => {
     const url = `/product/${product.webID}`;
     console.log("Navigating to:", url);
@@ -40,7 +57,10 @@ const ProductCard = ({ product }) => {
           onClick={handleClick}
         />
         <div className="absolute top-2 right-2">
-          <button className=" bg-white p-1 rounded-full hover:shadow-xl hover:shadow-slate-400">
+          <button
+            className="bg-white p-2 rounded-full hover:shadow-xl hover:shadow-slate-400"
+            onClick={handleWishlistClick}
+          >
             <MdFavoriteBorder className="text-black text-2xl" />
           </button>
         </div>
