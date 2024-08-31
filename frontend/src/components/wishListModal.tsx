@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { removeItemFromWishlist, moveToCart } from "../features/wishlistSlice";
-import { addItemToCart } from "../features/cartSlice"; // Import action to add item to cart
+import { addItemToCart } from "../features/cartSlice";
+import { AiOutlineClose } from "react-icons/ai";
 
 const WishlistModal = ({ isOpen, onClose }) => {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ const WishlistModal = ({ isOpen, onClose }) => {
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
         >
-          <span>X</span> {/* Close button */}
+          <AiOutlineClose size={16} />
         </button>
         <h2 className="text-2xl font-bold mb-4">Your Wishlist</h2>
         {items.length === 0 ? (
@@ -28,10 +29,7 @@ const WishlistModal = ({ isOpen, onClose }) => {
         ) : (
           <ul>
             {items.map((item, index) => (
-              <li
-                key={index}
-                className="flex justify-between items-center mb-4"
-              >
+              <li key={index} className="flex flex-col mb-4">
                 <div className="flex items-center">
                   <img
                     src={item.image}
@@ -43,9 +41,9 @@ const WishlistModal = ({ isOpen, onClose }) => {
                     <p>${item.price.toFixed(2)}</p>
                   </div>
                 </div>
-                <div className="flex items-center">
+                <div className="flex justify-end items-center">
                   <button
-                    className="btn btn-primary mr-4"
+                    className="bg-black mr-4 p-2 text-white rounded-xl hover:rounded-2xl"
                     onClick={() => handleMoveToCart(item)}
                   >
                     Add to Cart

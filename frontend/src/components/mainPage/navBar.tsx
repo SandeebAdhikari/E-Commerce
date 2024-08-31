@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import CartModal from "../cartModal";
 import WishlistModal from "../wishListModal"; // Import your WishlistModal
 import { useState } from "react";
+import Logo from "/images/sa-favicon-black.svg";
 
 const NavBar = () => {
   const { totalQuantity, totalPrice } = useSelector((state) => state.cart);
@@ -31,7 +32,7 @@ const NavBar = () => {
   return (
     <div className="flex h-24 shadow-lg shadow-slate-400 rounded-xl">
       <div className="flex items-center">
-        <a className="btn btn-ghost text-xl">Logo Here</a>
+        <img src={Logo} className="text-xl w-32" />
         <ul className="menu menu-horizontal px-1 gap-5 ml-16">
           <li>
             <details>
@@ -140,7 +141,6 @@ const NavBar = () => {
           </div>
         </button>
 
-        {/* Cart Button */}
         <div className="dropdown dropdown-end">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
             <div className="indicator">
