@@ -12,6 +12,11 @@ const SignUp = () => {
   const handleSignUp = (e) => {
     e.preventDefault();
 
+    if (!firstName || !lastName || !email || !password) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
     localStorage.setItem(
       "user",
       JSON.stringify({ firstName, lastName, email, password })

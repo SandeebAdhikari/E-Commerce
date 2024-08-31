@@ -39,8 +39,10 @@ const ProductCard = ({ product }) => {
           className="w-full h-full object-contain rounded-xl"
           onClick={handleClick}
         />
-        <div className="absolute top-2 right-2 bg-white p-1 rounded-full">
-          <MdFavoriteBorder className="text-black text-2xl" />
+        <div className="absolute top-2 right-2">
+          <button className=" bg-white p-1 rounded-full hover:shadow-xl hover:shadow-slate-400">
+            <MdFavoriteBorder className="text-black text-2xl" />
+          </button>
         </div>
       </div>
       <div className="flex flex-wrap items-center mt-2 gap-x-2 gap-y-2">
