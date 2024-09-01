@@ -26,6 +26,15 @@ This is a shopping application built using **Vite** and **React**. The app fetch
 
 - **State Management**:
   - Redux
+    ```bash
+    npm install @reduxjs/toolkit
+    npm install react-redux
+    ```
+- **Icons**:
+  ```bash
+   npm install react-icons
+   ```
+  
 
 ## **Getting Started**
 
@@ -43,20 +52,7 @@ This is a shopping application built using **Vite** and **React**. The app fetch
    ```bash
    npm install
    ```
-
-   ```bash
-   npm install react-dom
-   ```
-
-   ```bash
-   npm install @reduxjs/toolkit
-   npm install react-redux
-   ```
-
-   ```bash
-   npm install react-icons
-   ```
-
+   
 ### **Running the Application**
 
 1. **Start the development server**:
