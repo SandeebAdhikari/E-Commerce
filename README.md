@@ -120,3 +120,7 @@ VITE_RAPIDAPI_HOST=your_rapidapi_host
 4. Commit your changes (`git commit -m 'Add some feature'`).
 5. Push to the branch (`git push origin feature-branch`).
 6. Open a Pull Request.
+
+## License
+
+This project is licensed under the MIT License.
