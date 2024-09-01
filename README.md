@@ -1,4 +1,4 @@
-# **E-Commerce App**
+# **E-Commerce App using Redux **
 
 ### **Sign Up**
 
